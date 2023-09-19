@@ -1,4 +1,8 @@
 import _ from 'lodash';
+// Import our custom CSS
+import '../src/scss/style.scss'
+
+// Import all of Bootstrap's JS
 function component() {
     const element = document.createElement('div');
   
