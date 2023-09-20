@@ -1,4 +1,7 @@
+/* eslint-disable no-undef */
 'use strict'
+
+/* pas pris en compte par eslite */
 
 const path = require('path')
 const autoprefixer = require('autoprefixer')
@@ -48,6 +51,22 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: "babel-loader",
+                options: {
+                  presets: ['@babel/preset-env']
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }
